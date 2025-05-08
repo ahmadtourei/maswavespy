@@ -543,11 +543,12 @@ class InvertDC():
         
         # Iteration
         for w in range(N_max):
-            
+            #print(f'Iteration: {w}')
             # Testing shear wave velocity array (sample the shear wave velocity for each layer)
             beta_test = beta_opt + np.random.uniform(low=(-(bs / 100) * beta_opt), high=((bs / 100) * beta_opt))
-            while (beta_test[reversals:] != np.sort(beta_test[reversals:])).any():
-                beta_test = beta_opt + np.random.uniform(low=(-(bs / 100) * beta_opt), high=((bs / 100) * beta_opt))
+            #breakpoint()
+            #while (beta_test[reversals:] != np.sort(beta_test[reversals:])).any():
+            #    beta_test = beta_opt + np.random.uniform(low=(-(bs / 100) * beta_opt), high=((bs / 100) * beta_opt))
                 
             # Testing compressional wave velocity array (reevaluate the compressional wave 
             # velocity for each layer based on its testing shear wave velocity value)
